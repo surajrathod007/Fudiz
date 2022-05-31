@@ -58,7 +58,7 @@ class MealAdapter(context : Context)  : RecyclerView.Adapter<MealAdapter.ViewHol
             image.setOnClickListener {
 
 
-                Toast.makeText(it.context,"clicked ${data.idMeal}",Toast.LENGTH_SHORT).show()
+                //Toast.makeText(it.context,"clicked ${data.idMeal}",Toast.LENGTH_SHORT).show()
                 var intent = Intent(it.context,FoodInfoActivity::class.java)
                 intent.putExtra("mId",data.idMeal)
 

@@ -9,25 +9,36 @@
 
 
 
+
+
     <SearchView
+        android:queryHint="Search from 300+ Recepies"
         android:background="@drawable/search_bg"
         android:layout_margin="10dp"
         android:id="@+id/search"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintRight_toLeftOf="@id/btn"
-        app:layout_constraintBottom_toTopOf="@id/rvCategories"
+        app:layout_constraintBottom_toTopOf="@id/txtCat"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 
-    <Button
-        android:id="@+id/btn"
-        app:layout_constraintTop_toTopOf="parent"
+    <TextView
+        android:text="Categories"
+        android:textSize="20sp"
+        android:textColor="@color/text_color_bold"
+        android:fontFamily="@font/main_heavy"
+        android:layout_marginLeft="10dp"
+        android:id="@+id/txtCat"
+        android:drawableRight="@drawable/ic_baseline_fastfood_24"
+        app:layout_constraintTop_toBottomOf="@id/search"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/rvCategories"
         app:layout_constraintRight_toRightOf="parent"
-        android:text="->"
-        android:visibility="gone"
+        android:drawableTint="@color/text_color_bold"
+        android:drawablePadding="10dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
+
 
     <androidx.recyclerview.widget.RecyclerView
         android:layout_margin="10dp"
@@ -37,6 +48,26 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/search" />
+        app:layout_constraintTop_toBottomOf="@id/txtCat" />
+
+    <LinearLayout
+        android:visibility="visible"
+        android:id="@+id/progressBar"
+        android:gravity="center_vertical|center_horizontal"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:background="@color/back_color"
+        android:backgroundTint="@color/back_color"
+        android:layout_width="0dp"
+        android:layout_height="0dp">
+
+        <ProgressBar
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

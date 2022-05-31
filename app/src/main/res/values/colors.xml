@@ -17,4 +17,9 @@
     <color name="mustard">#fedd50</color>
     <color name="mustard_light">#ffbe0a</color>
     <color name="levender">#d9e8fb</color>
+
+    <color name="youtube_button">#ffe1e1</color>
+    <color name="youtube_icon">#eb2d2d</color>
+    <color name="source_button">#d0ffdb</color>
+    <color name="source_icon">#338339</color>
 </resources>

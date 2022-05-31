@@ -18,9 +18,11 @@
             android:clickable="true"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:src="@drawable/ic_launcher_background"/>
+
+            android:src="@drawable/ic_baseline_fastfood_24"/>
 
         <TextView
+            android:fontFamily="@font/main_bold"
             android:id="@+id/txtCatName"
             android:text="Beef"
             android:textStyle="bold"

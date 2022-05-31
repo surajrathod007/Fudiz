@@ -3,7 +3,9 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Asus/AndroidStudioProjects/Fudiz/app/src/main/res/drawable/ic_baseline_insert_link_24.xml" value="0.1425" />
         <entry key="..\:/Users/Asus/AndroidStudioProjects/Fudiz/app/src/main/res/drawable/search_bg.xml" value="0.1425" />
+        <entry key="..\:/Users/Asus/AndroidStudioProjects/Fudiz/app/src/main/res/drawable/youtube_button_bg.xml" value="0.1425" />
         <entry key="..\:/Users/Asus/AndroidStudioProjects/Fudiz/app/src/main/res/layout/activity_food_info.xml" value="0.2" />
         <entry key="..\:/Users/Asus/AndroidStudioProjects/Fudiz/app/src/main/res/layout/activity_main.xml" value="0.176" />
         <entry key="..\:/Users/Asus/AndroidStudioProjects/Fudiz/app/src/main/res/layout/activity_meal_info.xml" value="0.25416666666666665" />

@@ -1,7 +1,10 @@
 package com.surajrathod.fudiz.ui
 
+import android.graphics.Color
+import android.graphics.drawable.ColorDrawable
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.MenuItem
 import android.view.View
 import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
@@ -34,11 +37,16 @@ class MealsActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_meals)
 
+        val color = ColorDrawable(Color.parseColor("#3e416e"))
+        supportActionBar?.setBackgroundDrawable(color)
+
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
         catViewModel = ViewModelProvider(this).get(CatViewModel::class.java)
 
         var cat = intent.getStringExtra("id").toString()
         c = cat
         //getData()
+        supportActionBar?.title = c
 
         catViewModel.getMealBy(c)
         catViewModel.mealList.observe(this,{
@@ -47,7 +55,7 @@ class MealsActivity : AppCompatActivity() {
 
 
         adapter = MealAdapter(this)
-        rvMeals.layoutManager = GridLayoutManager(this,2)
+        rvMeals.layoutManager = GridLayoutManager(this,3)
         rvMeals.adapter = adapter
         rvMeals.hasFixedSize()
 
@@ -81,6 +89,16 @@ class MealsActivity : AppCompatActivity() {
             }
         })
 
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+
+        when(item.itemId){
+            android.R.id.home->{
+                onBackPressed()
+            }
+        }
+        return super.onOptionsItemSelected(item)
     }
 
 

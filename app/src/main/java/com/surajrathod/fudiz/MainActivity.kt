@@ -1,8 +1,11 @@
 package com.surajrathod.fudiz
 
+import android.graphics.Color
+import android.graphics.drawable.ColorDrawable
 import android.opengl.Visibility
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.text.SpannableString
 import android.view.View
 import android.widget.Toast
 import androidx.lifecycle.Observer
@@ -36,6 +39,9 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        val color = ColorDrawable(Color.parseColor("#3e416e"))
+        supportActionBar?.setBackgroundDrawable(color)
+        progressBar.visibility = View.VISIBLE
         catViewModel = ViewModelProvider(this@MainActivity).get(CatViewModel::class.java)
         //getData()
 
@@ -48,10 +54,13 @@ class MainActivity : AppCompatActivity() {
         rvCategories.layoutManager = GridLayoutManager(this,3)
         rvCategories.adapter = adapter
         rvCategories.hasFixedSize()
+        progressBar.visibility = View.GONE
 
-        search.setOnSearchClickListener {
-            btn.visibility = View.VISIBLE
-        }
+
+
+
+
+
 
 //
 //        getData1()

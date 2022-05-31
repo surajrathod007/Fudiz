@@ -1,8 +1,14 @@
 package com.surajrathod.fudiz
 
+import android.content.Intent
+import android.graphics.Color
+import android.graphics.drawable.ColorDrawable
+import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.MenuItem
 import android.widget.Toast
+import androidx.core.net.toUri
 import androidx.lifecycle.ViewModelProvider
 import coil.load
 import com.surajrathod.fudiz.model.Food
@@ -21,10 +27,18 @@ class FoodInfoActivity : AppCompatActivity() {
 
     lateinit var catViewModel : CatViewModel
 
+    var source = ""
+    var youtube = ""
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_food_info)
+        val color = ColorDrawable(Color.parseColor("#3e416e"))
+        supportActionBar?.setBackgroundDrawable(color)
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        supportActionBar?.title = "Recipe"
         val id = intent.getStringExtra("mId")
+
+
 
 
 
@@ -32,6 +46,15 @@ class FoodInfoActivity : AppCompatActivity() {
 
         getMealById(id!!)
 
+
+        btnSource.setOnClickListener {
+
+            startActivity(Intent(Intent.ACTION_VIEW, Uri.parse(source)))
+
+        }
+        btnYoutube.setOnClickListener {
+            startActivity(Intent(Intent.ACTION_VIEW, Uri.parse(youtube)))
+        }
 
 
 
@@ -44,7 +67,9 @@ class FoodInfoActivity : AppCompatActivity() {
     }
 
     fun setMeal(m : MealX) {
-        txtCountry.text = m.strArea.toString()
+
+        youtube = m.strYoutube
+        source = m.strSource.toString()
         imgMeal.load(m.strMealThumb) {
             crossfade(true)
             placeholder(R.drawable.ic_launcher_background)
@@ -218,5 +243,15 @@ class FoodInfoActivity : AppCompatActivity() {
                 TODO("Not yet implemented")
             }
         })
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+
+        when(item.itemId){
+            android.R.id.home->{
+                onBackPressed()
+            }
+        }
+        return super.onOptionsItemSelected(item)
     }
 }
